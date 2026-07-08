@@ -3,176 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сектор Газа | Легенда Рока</title>
+    <title>Сектор Газа | Музыкальный Плеер</title>
     <style>
         /* Общие стили */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #121212;
+            background-color: #0f0f0f;
             color: #e0e0e0;
             line-height: 1.6;
         }
 
-        a {
-            color: #ff3333;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #ff6666;
-        }
-
         /* Шапка сайта */
         header {
-            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(18,18,18,1) 100%);
-            padding: 40px 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(15,15,15,1) 100%);
+            padding: 50px 20px;
             text-align: center;
-            border-bottom: 3px solid #ff3333;
+            border-bottom: 4px solid #ff3333;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #ff3333;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 5px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
             margin-bottom: 10px;
         }
 
         header p {
             font-style: italic;
-            color: #aaaaaa;
+            color: #888;
             font-size: 1.2rem;
         }
 
         /* Контейнер */
         .container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
         /* Разделы */
-        section {
-            margin-bottom: 60px;
-        }
-
         h2 {
             font-size: 2rem;
             color: #fff;
             border-left: 5px solid #ff3333;
             padding-left: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* О группе */
-        .about-text {
-            background: #1a1a1a;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #333;
-        }
-
-        /* Плеер и Музыка */
+        /* Музыкальный список */
         .track-list {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
-        }
-
-        @media (min-width: 768px) {
-            .track-list {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .track-item {
-            background: #1e1e1e;
-            padding: 15px;
-            border-radius: 6px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 1px solid #2a2a2a;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .track-item:hover {
-            transform: translateY(-2px);
-            border-color: #ff3333;
-        }
-
-        .track-info {
-            margin-bottom: 10px;
-        }
-
-        .track-title {
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .track-album {
-            font-size: 0.85rem;
-            color: #888;
-        }
-
-        audio {
-            width: 100%;
-            margin-top: 10px;
-            border-radius: 4px;
-        }
-
-        /* Альбомы */
-        .albums-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
 
-        .album-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
+        .track-item {
+            background: #161616;
+            padding: 20px;
             border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            transition: background 0.3s;
-        }
-
-        .album-card:hover {
-            background: #222;
-        }
-
-        .album-cover {
-            width: 100%;
-            aspect-ratio: 1;
-            background: #333;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #555;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #222;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .track-item:hover {
+            transform: translateY(-3px);
+            border-color: #ff3333;
+            box-shadow: 0 6px 12px rgba(255, 51, 51, 0.1);
+        }
+
+        .track-info {
             margin-bottom: 15px;
-            border-radius: 4px;
-            border: 2px dashed #444;
+        }
+
+        .track-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .track-album {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Стилизация стандартного плеера */
+        audio {
+            width: 100%;
+            margin-top: 5px;
+            border-radius: 30px;
+            background: #222;
         }
 
         /* Подвал */
         footer {
-            background: #0a0a0a;
+            background: #050505;
             text-align: center;
-            padding: 20px;
-            color: #666;
+            padding: 25px;
+            color: #555;
             font-size: 0.9rem;
-            border-top: 1px solid #222;
-            margin-top: 40px;
+            border-top: 1px solid #111;
+            margin-top: 60px;
         }
     </style>
 </head>
@@ -185,15 +130,8 @@
 
     <div class="container">
         
-        <section id="about">
-            <h2>О группе</h2>
-            <div class="about-text">
-                <p><strong>«Сектор Газа»</strong> — советская и российская рок-группа, основанная 5 декабря 1987 года в Воронеже Юрием Клинских (известным как Юрий Хой). Группа стала культовым феноменом, объединив в себе элементы панк-рока, хард-рока, фолка и советской эстрады. Их честные, простые и порой сатирические тексты нашли отклик в сердцах миллионов слушателей.</p>
-            </div>
-        </section>
-
         <section id="music">
-            <h2>Популярные треки</h2>
+            <h2>Легендарные треки (Онлайн-плеер)</h2>
             <div class="track-list">
                 
                 <div class="track-item">
@@ -201,7 +139,7 @@
                         <div class="track-title">Лирика</div>
                         <div class="track-album">Альбом: Нажми на газ (1993)</div>
                     </div>
-                    <audio controls src="audio/lirika.mp3"></audio>
+                    <audio controls preload="none" src="https://fex.net/get/752109265691/32014138/Sektor_Gaza_-_Lirika.mp3"></audio>
                 </div>
 
                 <div class="track-item">
@@ -209,7 +147,7 @@
                         <div class="track-title">Туман</div>
                         <div class="track-album">Альбом: Газовая атака (1996)</div>
                     </div>
-                    <audio controls src="audio/tuman.mp3"></audio>
+                    <audio controls preload="none" src="https://fex.net/get/752109265691/32014144/Sektor_Gaza_-_Tuman.mp3"></audio>
                 </div>
 
                 <div class="track-item">
@@ -217,7 +155,7 @@
                         <div class="track-title">Пора домой</div>
                         <div class="track-album">Альбом: Наркологический университет миллионов (1997)</div>
                     </div>
-                    <audio controls src="audio/pora_domoy.mp3"></audio>
+                    <audio controls preload="none" src="https://fex.net/get/752109265691/32014141/Sektor_Gaza_-_Pora_domoy.mp3"></audio>
                 </div>
 
                 <div class="track-item">
@@ -225,38 +163,24 @@
                         <div class="track-title">Демобилизация</div>
                         <div class="track-album">Альбом: Восставший из ада (2000)</div>
                     </div>
-                    <audio controls src="audio/demobilizaciya.mp3"></audio>
+                    <audio controls preload="none" src="https://fex.net/get/752109265691/32014135/Sektor_Gaza_-_Demobilizaciya.mp3"></audio>
                 </div>
 
-            </div>
-        </section>
+                <div class="track-item">
+                    <div class="track-info">
+                        <div class="track-title">30 лет</div>
+                        <div class="track-album">Альбом: Газовая атака (1996)</div>
+                    </div>
+                    <audio controls preload="none" src="https://fex.net/get/752109265691/32014132/Sektor_Gaza_-_30_let.mp3"></audio>
+                </div>
 
-        <section id="albums">
-            <h2>Избранные альбомы</h2>
-            <div class="albums-grid">
-                <div class="album-card">
-                    <div class="album-cover">1990</div>
-                    <h3>Зловещие мертвецы</h3>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover">1993</div>
-                    <h3>Нажми на газ</h3>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover">1996</div>
-                    <h3>Газовая атака</h3>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover">2000</div>
-                    <h3>Восставший из ада</h3>
-                </div>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Фан-сайт группы Сектор Газа. Сделано для GitHub Pages.</p>
+        <p>&copy; 2026 Сектор Газа Плеер. Рок-н-ролл на GitHub Pages.</p>
     </footer>
 
 </body>
