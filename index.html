@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сектор Газа | Легенда Рока</title>
+    <style>
+        /* Общие стили */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #ff3333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ff6666;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(18,18,18,1) 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #ff3333;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ff3333;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-style: italic;
+            color: #aaaaaa;
+            font-size: 1.2rem;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Разделы */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #fff;
+            border-left: 5px solid #ff3333;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        /* О группе */
+        .about-text {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        /* Плеер и Музыка */
+        .track-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .track-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .track-item {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .track-item:hover {
+            transform: translateY(-2px);
+            border-color: #ff3333;
+        }
+
+        .track-info {
+            margin-bottom: 10px;
+        }
+
+        .track-title {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .track-album {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        /* Альбомы */
+        .albums-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .album-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .album-card:hover {
+            background: #222;
+        }
+
+        .album-cover {
+            width: 100%;
+            aspect-ratio: 1;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 2px dashed #444;
+        }
+
+        /* Подвал */
+        footer {
+            background: #0a0a0a;
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Сектор Газа</h1>
+        <p>«Хой жив, пока жива его музыка!»</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>О группе</h2>
+            <div class="about-text">
+                <p><strong>«Сектор Газа»</strong> — советская и российская рок-группа, основанная 5 декабря 1987 года в Воронеже Юрием Клинских (известным как Юрий Хой). Группа стала культовым феноменом, объединив в себе элементы панк-рока, хард-рока, фолка и советской эстрады. Их честные, простые и порой сатирические тексты нашли отклик в сердцах миллионов слушателей.</p>
+            </div>
+        </section>
+
+        <section id="music">
+            <h2>Популярные треки</h2>
+            <div class="track-list">
+                
+                <div class="track-item">
+                    <div class="track-info">
+                        <div class="track-title">Лирика</div>
+                        <div class="track-album">Альбом: Нажми на газ (1993)</div>
+                    </div>
+                    <audio controls src="audio/lirika.mp3"></audio>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-info">
+                        <div class="track-title">Туман</div>
+                        <div class="track-album">Альбом: Газовая атака (1996)</div>
+                    </div>
+                    <audio controls src="audio/tuman.mp3"></audio>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-info">
+                        <div class="track-title">Пора домой</div>
+                        <div class="track-album">Альбом: Наркологический университет миллионов (1997)</div>
+                    </div>
+                    <audio controls src="audio/pora_domoy.mp3"></audio>
+                </div>
+
+                <div class="track-item">
+                    <div class="track-info">
+                        <div class="track-title">Демобилизация</div>
+                        <div class="track-album">Альбом: Восставший из ада (2000)</div>
+                    </div>
+                    <audio controls src="audio/demobilizaciya.mp3"></audio>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="albums">
+            <h2>Избранные альбомы</h2>
+            <div class="albums-grid">
+                <div class="album-card">
+                    <div class="album-cover">1990</div>
+                    <h3>Зловещие мертвецы</h3>
+                </div>
+                <div class="album-card">
+                    <div class="album-cover">1993</div>
+                    <h3>Нажми на газ</h3>
+                </div>
+                <div class="album-card">
+                    <div class="album-cover">1996</div>
+                    <h3>Газовая атака</h3>
+                </div>
+                <div class="album-card">
+                    <div class="album-cover">2000</div>
+                    <h3>Восставший из ада</h3>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Фан-сайт группы Сектор Газа. Сделано для GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
