@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сектор Газа | Музыкальный Плеер</title>
+    <title>Сектор Газа | Яндекс Музыка</title>
     <style>
         * {
             box-sizing: border-box;
@@ -16,11 +16,14 @@
             background-color: #0d0d0d;
             color: #e0e0e0;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         header {
             background: linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(13,13,13,1) 100%);
-            padding: 60px 20px;
+            padding: 50px 20px;
             text-align: center;
             border-bottom: 4px solid #ff3333;
         }
@@ -41,9 +44,11 @@
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            max-width: 700px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
         }
 
         h2 {
@@ -51,64 +56,39 @@
             color: #fff;
             border-left: 5px solid #ff3333;
             padding-left: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-transform: uppercase;
         }
 
-        .track-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .track-item {
+        /* Контейнер для плеера Яндекс Музыки */
+        .music-player-wrap {
             background: #141414;
-            padding: 20px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             border: 1px solid #222;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: border-color 0.3s;
         }
 
-        .track-item:hover {
-            transform: translateY(-3px);
+        .music-player-wrap:hover {
             border-color: #ff3333;
-            box-shadow: 0 5px 15px rgba(255, 51, 51, 0.15);
         }
 
-        .track-info {
-            margin-bottom: 15px;
-        }
-
-        .track-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 5px;
-        }
-
-        .track-album {
-            font-size: 0.95rem;
-            color: #888;
-        }
-
-        audio {
+        iframe {
             width: 100%;
-            margin-top: 5px;
-            border-radius: 30px;
+            height: 450px;
+            border: none;
+            display: block;
+            border-radius: 8px;
         }
 
         footer {
             background: #050505;
             text-align: center;
-            padding: 30px;
-            color: #555;
+            padding: 25px;
+            color: #444;
             font-size: 0.9rem;
             border-top: 1px solid #111;
-            margin-top: 60px;
         }
     </style>
 </head>
@@ -120,50 +100,17 @@
     </header>
 
     <div class="container">
-        
-        <section id="music">
-            <h2>Легендарные треки</h2>
-            <div class="track-list">
-                
-                <div class="track-item">
-                    <div class="track-info">
-                        <div class="track-title">Пора домой</div>
-                        <div class="track-album">Альбом: Наркологический университет миллионов (1997)</div>
-                    </div>
-                    <audio controls src="https://archive.org/download/sektor-gaza-pora-domoj/Sektor_Gaza_-_Pora_domoj.mp3"></audio>
-                </div>
-
-                <div class="track-item">
-                    <div class="track-info">
-                        <div class="track-title">Лирика</div>
-                        <div class="track-album">Альбом: Нажми на газ (1993)</div>
-                    </div>
-                    <audio controls src="https://archive.org/download/sektor-gaza-lirika/Sektor_Gaza_-_Lirika.mp3"></audio>
-                </div>
-
-                <div class="track-item">
-                    <div class="track-info">
-                        <div class="track-title">Туман</div>
-                        <div class="track-album">Альбом: Газовая атака (1996)</div>
-                    </div>
-                    <audio controls src="https://archive.org/download/sektor-gaza-tuman/Sektor_Gaza_-_Tuman.mp3"></audio>
-                </div>
-
-                <div class="track-item">
-                    <div class="track-info">
-                        <div class="track-title">Демобилизация</div>
-                        <div class="track-album">Альбом: Восставший из ада (2000)</div>
-                    </div>
-                    <audio controls src="https://archive.org/download/sektor-gaza-demobilizacija/Sektor_Gaza_-_Demobilizacija.mp3"></audio>
-                </div>
-
+        <section id="player-section">
+            <h2>Альбом: Наркологический университет миллионов</h2>
+            
+            <div class="music-player-wrap">
+                <iframe src="https://music.yandex.ru/iframe/#album/243761"></iframe>
             </div>
         </section>
-
     </div>
 
     <footer>
-        <p>&copy; 2026 Сектор Газа Плеер. Онлайн-стриминг на GitHub Pages.</p>
+        <p>&copy; 2026 Сектор Газа Плеер. Интеграция с Яндекс Музыкой на GitHub Pages.</p>
     </footer>
 
 </body>
